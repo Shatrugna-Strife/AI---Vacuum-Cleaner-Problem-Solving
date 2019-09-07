@@ -50,20 +50,22 @@ def moving_image_y(img_vacuum, y):
         time.sleep(0.01)  
         master.update()     
 
-
-
-
 # Image generator code
 img_1 = ImageTk.PhotoImage(Image.open("dirt.jpg"))
-# for i in range(10):
-#     canvas.create_image(rectangle_1_x+image_size/2, rectangle_1_y+image_size/2+ i*grid_1_size, image = img_1)
-img_2 = ImageTk.PhotoImage(Image.open("vacuum.jpg"))
-img_vacuum = canvas.create_image(rectangle_1_x+grid_1_size+image_size/2, rectangle_1_y+image_size/2, image = img_2)
 
 tiles = dirt_generator(15)
 for i in range(100):
     if tiles[i] == 1:
         canvas.create_image(rectangle_1_x+grid_1_size*(i%10)+image_size/2, rectangle_1_y+grid_1_size*(i//10) +image_size/2, image = img_1)
+
+
+
+# for i in range(10):
+#     canvas.create_image(rectangle_1_x+image_size/2, rectangle_1_y+image_size/2+ i*grid_1_size, image = img_1)
+img_2 = ImageTk.PhotoImage(Image.open("vacuum.jpg"))
+img_vacuum = canvas.create_image(rectangle_1_x+grid_1_size+image_size/2, rectangle_1_y+image_size/2, image = img_2)
+
+
 
 
 grid_1 = create_grid(master, rectangle_1_x, rectangle_1_y, size, grid_1_size)
@@ -72,6 +74,15 @@ canvas.pack()
 
 for _ in range(8):
     moving_image_x(img_vacuum, 1)
-    
+moving_image_y(img_vacuum,1)
+for _ in range(9):
+    moving_image_x(img_vacuum, -1)
+moving_image_y(img_vacuum,1)
+for _ in range(9):
+    moving_image_x(img_vacuum, 1)
+moving_image_y(img_vacuum,1)
+for _ in range(9):
+    moving_image_x(img_vacuum, -1)
+
 
 master.mainloop()
