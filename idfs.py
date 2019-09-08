@@ -54,7 +54,7 @@ def DFS(node, depth = 0):
         if temp.goal_test():
             print("found")
             print(temp.previous_list)
-            satck.append(temp)
+            stack.append(temp.previous_list)
             # for x in len(temp.visit_list):
             #     if temp.visit_list[x] == 1:
             #         print(x, end=" ")
@@ -78,5 +78,5 @@ def DFS(node, depth = 0):
             # queue.append(d)
             DFS(d, depth = depth - 1)
         # return temp
-DFS(root, 11)
+DFS(root, 9)
 print(len(stack))
