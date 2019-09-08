@@ -11,21 +11,24 @@ import numpy as np
 
 
 root = tkinter.Tk()
+layer = tkinter.Canvas(root, width = 500, height = 700)
 frame = tkinter.Frame(root)
 frame.pack(side = tkinter.RIGHT)
 root.wm_title("Embedding in Tk")
 
-frame1 = tkinter.Frame(root)
-frame1.pack(side = tkinter.LEFT)
+# frame1 = tkinter.Frame(root)
+# frame1.pack(side = tkinter.LEFT)
 # layer = tkinter.Canvas(root,width= 1800,height= 800)
 # tkinter.Label(frame1, text="Fuck oFF",).pack()
   
-text = tkinter.Text(frame1)  
-text.insert(tkinter.INSERT, "Name.....")  
-text.insert(tkinter.INSERT, "Name.....") 
-text.insert(tkinter.END, "Salary.....")  
-text.pack()  
+# text = tkinter.Text(frame1)  
+# text.insert(tkinter.INSERT, "Name.....")  
+# text.insert(tkinter.INSERT, "Name.....") 
+# text.insert(tkinter.END, "Salary.....")  
+# text.pack()  
+layer.create_text(0,100,text = "fUcK oFF")
 
+layer.pack()
 fig = Figure(figsize=(7, 7), dpi=100)
 t = np.arange(0, 3, .01)
 ax_1 = fig.add_subplot(221)
@@ -40,7 +43,7 @@ ax_4.plot(t, 2 * np.sin(2 * np.pi * t))
 canvas = FigureCanvasTkAgg(fig, master=frame) 
 canvas.draw()
 canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
-# layer.pack()
+
 toolbar = NavigationToolbar2Tk(canvas, frame)
 toolbar.update()
 canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
@@ -53,5 +56,5 @@ def on_key_press(event):
 
 canvas.mpl_connect("key_press_event", on_key_press)
 
-# layer.mainloop()
+layer.mainloop()
 tkinter.mainloop()
