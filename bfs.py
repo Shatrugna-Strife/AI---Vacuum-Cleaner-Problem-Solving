@@ -8,17 +8,17 @@ size = 0
 
 while 1:
     temp = queue.pop(0)
-    temp_list = []
+    # temp_list = []
     # time.sleep(0.05)
     # if temp!=None:
     #     print(len(temp.previous_list))
-    if temp!=None and len(temp.previous_list) !=0:
-        temp_list = temp.previous_list[:]
+    # if temp!=None and len(temp.previous_list) !=0:
+    #     temp_list = temp.previous_list[:]
         # print(temp_list)
-        temp_list = list(dict.fromkeys(temp_list))
+        # temp_list = list(dict.fromkeys(temp_list))
         # print(temp_list)
-    if temp!=None and len(temp.previous_list) !=0 and len(temp_list)!=len(temp.previous_list):
-        temp = None
+    # if temp!=None and len(temp.previous_list) !=0 and len(temp_list)!=len(temp.previous_list):
+    #     temp = None
     if temp !=None:
         if temp.goal_test():
             print("found")
