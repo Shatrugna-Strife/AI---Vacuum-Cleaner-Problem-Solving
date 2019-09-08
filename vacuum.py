@@ -1,5 +1,5 @@
 import random
-side = 5
+side = 10
 tiles = side*side
 
 class vacuum_node:

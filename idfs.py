@@ -43,10 +43,11 @@ queue = []
 # print(stack)
 
 
-root = vacuum.create_root_node(5)
+root = vacuum.create_root_node(1)
 queue.append(root)
 
-stack=[]
+stack = []
+
 def DFS(node, depth = 0):
     temp = copy.deepcopy(node)
     # temp = node
@@ -58,7 +59,6 @@ def DFS(node, depth = 0):
             # for x in len(temp.visit_list):
             #     if temp.visit_list[x] == 1:
             #         print(x, end=" ")
-
 
         l = temp.next_state("left")
         if l!=None and not depth<=0:
@@ -78,5 +78,5 @@ def DFS(node, depth = 0):
             # queue.append(d)
             DFS(d, depth = depth - 1)
         # return temp
-DFS(root, 9)
-print(len(stack))
+DFS(root, 19)
+print(stack)
