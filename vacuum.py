@@ -1,4 +1,3 @@
-import sys
 import random
 side = 5
 tiles = side*side
@@ -13,8 +12,8 @@ class vacuum_node:
         self.next_state("mop")
         self.visit_list = visit_list[:]
         self.visit_list[self.position] = 1
-        
-    
+
+
     def dirt_generator(self, p):
         tile = [0]*tiles
         num = random.sample(range(tiles), p)
@@ -28,7 +27,7 @@ class vacuum_node:
         #     if self.state[i]!=temp_state:
         #         return False
         # return True
-        return self.state == temp_state 
+        return self.state == temp_state
 
     def next_state(self, action):
         if action == "mop":
@@ -54,7 +53,7 @@ class vacuum_node:
                 return None
             else:
                 return vacuum_node(self.state, position = self.position + side, previous_list = self.previous_list, visit_list = self.visit_list, previous = self.position)
-        
+
 class create_root_node(vacuum_node):
     def __init__(self, p):
         state = super().dirt_generator(p)
@@ -77,11 +76,3 @@ class create_root_node(vacuum_node):
 # print(g.previous_list)
 # print(f.previous_list)
 # print (g.previous_list)
-
-
-
-
-
-
-    
-

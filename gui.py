@@ -29,13 +29,13 @@ canvas = tkinter.Canvas(master, width = 1500, height = 800)
 
 #                 self.img_open_vacuum = ImageTk.PhotoImage(Image.open(self.file))
 #                 self.img_vacuum = self.canvas.create_image(self.x+self.img_size/2, self.y+self.img_size/2, image = self.img_open_vacuum)
-        
+
 #         def moving_image(self,x, y):
 #                 for _ in range(self.g_size):
 #                         self.canvas.move(self.img_vacuum, x, y)
-#                         time.sleep(0.01)  
+#                         time.sleep(0.01)
 #                         master.update()
-        
+
 #         def move_vacuum(self, action):
 #                 if action =="right":
 #                         self.moving_image(1, 0)
@@ -66,12 +66,12 @@ def create_grid(master, x, y, size, grid_size):
 # def moving_image(img_vacuum, x):
 #         canvas.move(img_vacuum, x, 0)
 #         time.sleep(0.01)
-        
+
 def moving_image(img_vacuum,x, y):
     for _ in range(grid_1_size):
         canvas.move(img_vacuum, x, y)
-        time.sleep(0.01)  
-        master.update() 
+        time.sleep(0.01)
+        master.update()
 
 # Image generator code
 img_1 = ImageTk.PhotoImage(Image.open("dirt.jpg"))
@@ -85,8 +85,8 @@ img_1 = ImageTk.PhotoImage(Image.open("dirt.jpg"))
 
 
 
-for i in range(10):
-    canvas.create_image(rectangle_1_x+image_size/2, rectangle_1_y+image_size/2+ i*grid_1_size, image = img_1)
+# for i in range(10):
+#     canvas.create_image(rectangle_1_x+image_size/2, rectangle_1_y+image_size/2+ i*grid_1_size, image = img_1)
 img_2 = ImageTk.PhotoImage(Image.open("vacuum.jpg"))
 img_vacuum = canvas.create_image(rectangle_1_x+grid_1_size+image_size/2, rectangle_1_y+image_size/2, image = img_2)
 
@@ -111,8 +111,3 @@ canvas.pack()
 
 
 master.mainloop()
-
-
-
-        
-        
