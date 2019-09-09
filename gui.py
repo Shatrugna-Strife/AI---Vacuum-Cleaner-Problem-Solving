@@ -36,7 +36,7 @@ def grid_1(master, canvas):
     def moving_image(img_vacuum,x, y):
         for _ in range(grid_1_size):
             canvas.move(img_vacuum, x, y)
-            time.sleep(0.01)
+            time.sleep(0.001)
             master.update()
 
 
@@ -67,16 +67,19 @@ def grid_1(master, canvas):
         for i in pos:
             if i - previous == 1:
                 moving_image(img_vacuum, 1, 0)
-                # canvas.create_line(args, kw)
+                canvas.create_line(rectangle_1_x+(previous%size)*grid_1_size + grid_1_size/2, rectangle_1_y + (previous//size)*grid_1_size + grid_1_size/2, rectangle_1_x+(i%size)*grid_1_size+ grid_1_size/2, rectangle_1_y + (i//size)*grid_1_size +grid_1_size/2)
                 previous = i
             elif i - previous == -1:
                 moving_image(img_vacuum, -1, 0)
+                canvas.create_line(rectangle_1_x+(previous%size)*grid_1_size + grid_1_size/2, rectangle_1_y + (previous//size)*grid_1_size + grid_1_size/2, rectangle_1_x+(i%size)*grid_1_size+ grid_1_size/2, rectangle_1_y + (i//size)*grid_1_size +grid_1_size/2)
                 previous = i
             elif i - previous == size:
                 moving_image(img_vacuum, 0, 1)
+                canvas.create_line(rectangle_1_x+(previous%size)*grid_1_size + grid_1_size/2, rectangle_1_y + (previous//size)*grid_1_size + grid_1_size/2, rectangle_1_x+(i%size)*grid_1_size+ grid_1_size/2, rectangle_1_y + (i//size)*grid_1_size +grid_1_size/2)
                 previous = i
             elif i - previous == -size:
                 moving_image(img_vacuum, 0, -1)
+                canvas.create_line(rectangle_1_x+(previous%size)*grid_1_size + grid_1_size/2, rectangle_1_y + (previous//size)*grid_1_size + grid_1_size/2, rectangle_1_x+(i%size)*grid_1_size+ grid_1_size/2, rectangle_1_y + (i//size)*grid_1_size +grid_1_size/2)
                 previous = i
 
     motion(stack[0], img_vacuum)

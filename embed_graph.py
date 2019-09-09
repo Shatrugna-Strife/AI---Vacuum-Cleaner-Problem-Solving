@@ -1,19 +1,18 @@
 import tkinter
 from tkinter import *
 import gui
-
-
-from matplotlib.backends.backend_tkagg import (
-    FigureCanvasTkAgg, NavigationToolbar2Tk)
-# Implement the default Matplotlib key bindings.
+import vacuum
+from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg, NavigationToolbar2Tk)
 from matplotlib.backend_bases import key_press_handler
 from matplotlib.figure import Figure
+
+vacuum.side = 8
 
 import numpy as np
 
 
 root = tkinter.Tk()
-root.geometry("1400x700")
+root.geometry("1400x750")
 frame = tkinter.Frame(root)
 frame.pack(side = tkinter.RIGHT)
 frame1 = tkinter.Frame(root)
@@ -25,16 +24,21 @@ root.wm_title("YEah")
 canvas1 = tkinter.Canvas(frame2, width = 600, height = 700 , bg = "red")
 # canvas1.place(x = 0, y = 0)
 canvas1.pack(side = tkinter.BOTTOM)
-canvas2 = tkinter.Canvas(frame, width = 800, height = 500)
+canvas2 = tkinter.Canvas(frame, width = 800, height = 500, bg = "red")
 # canvas2.place(x = 0, y = 0)
 canvas2.pack(side = tkinter.TOP)
 # layer = tkinter.Canvas(root, width = 1000, height = 700)
 def print_me():
+    # canvas2.pack_forget()
     gui.grid_1(root, canvas2)
+    canvas2.pack(side = tkinter.TOP, bg = "white")
+def print_me1():
+    canvas2.create_text(40, 40, text = "Fuck oof")
     # canvas2.create_text(20, 10, text = "Fuck off" )
 button1 = tkinter.Button(frame1, text = "click me", command = print_me)
 button1.pack(side = tkinter.LEFT)
-
+button2 = tkinter.Button(frame1, text = "click me", command = print_me1)
+button2.pack(side = tkinter.LEFT)
 
 
 # layer = tkinter.Canvas(root,width= 1800,height= 800)
@@ -64,11 +68,13 @@ ax_2.plot(t, 2 * np.sin(2 * np.pi * t))
 canvas = FigureCanvasTkAgg(fig, master=frame)
 # canvas = FigureCanvasTkAgg(fig, master=root)
 canvas.draw()
+
+
 canvas.get_tk_widget().pack(side=tkinter.BOTTOM, fill=tkinter.BOTH, expand=1)
-# canvas.get_tk_widget().pack(side="se", fill=tkinter.BOTH, expand=1)
-# toolbar = NavigationToolbar2Tk(canvas, frame)
-# toolbar.update()
-# canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+# canvas.get_tk_widget().pack(side=, fill=tkinter.BOTH, expand=1)
+toolbar = NavigationToolbar2Tk(canvas, frame)
+toolbar.update()
+canvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
 
 
 def on_key_press(event):
