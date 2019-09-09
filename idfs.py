@@ -78,9 +78,6 @@ def i_d_f_s():
                 # queue.append(d)
                 DFS(d, depth = depth - 1)
             # return temp
-    DFS(root, 10)
+    DFS(root, 30)
     stack.append(root.state)
     return stack
-
-new = i_d_f_s()
-print(new)

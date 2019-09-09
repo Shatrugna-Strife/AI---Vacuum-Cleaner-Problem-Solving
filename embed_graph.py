@@ -1,5 +1,6 @@
 import tkinter
 from tkinter import *
+import gui
 
 
 from matplotlib.backends.backend_tkagg import (
@@ -24,12 +25,13 @@ root.wm_title("YEah")
 canvas1 = tkinter.Canvas(frame2, width = 600, height = 700 , bg = "red")
 # canvas1.place(x = 0, y = 0)
 canvas1.pack(side = tkinter.BOTTOM)
-canvas2 = tkinter.Canvas(frame, width = 800, height = 500 , bg = "red")
+canvas2 = tkinter.Canvas(frame, width = 800, height = 500)
 # canvas2.place(x = 0, y = 0)
 canvas2.pack(side = tkinter.TOP)
 # layer = tkinter.Canvas(root, width = 1000, height = 700)
 def print_me():
-    canvas2.create_text(20, 10, text = "Fuck off" )
+    gui.grid_1(root, canvas2)
+    # canvas2.create_text(20, 10, text = "Fuck off" )
 button1 = tkinter.Button(frame1, text = "click me", command = print_me)
 button1.pack(side = tkinter.LEFT)
 
