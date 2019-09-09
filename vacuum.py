@@ -1,5 +1,6 @@
 import random
-side = 10
+import sys
+side = 7
 tiles = side*side
 
 # class vacuum_node:
@@ -116,8 +117,10 @@ class create_root_node(vacuum_node):
         state = super().dirt_generator(p)
         super().__init__(state)
 
+
 # state = [0]*100
 # g = vacuum_node(state)
+# print(sys.getsizeof(g))
 # for _ in range(7):
 #     g = g.next_state("right")
 # g = g.next_state("right")

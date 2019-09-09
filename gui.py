@@ -8,6 +8,7 @@ import vacuum
 
 
 stack = idfs.i_d_f_s()
+print(stack)
 
 
 grid_1_size = 50
@@ -19,7 +20,7 @@ vacuum_pos_x = image_size/2
 vacuum_pos_y = image_size/2
 size = vacuum.side
 
-grid_2_size = 50
+grid_2_size = 10
 rectangle_2_x = rectangle_1_x + size*grid_1_size + grid_2_size
 rectangle_2_y = rectangle_1_y
 
