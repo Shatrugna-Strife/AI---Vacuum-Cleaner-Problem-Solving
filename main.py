@@ -79,10 +79,6 @@ button4.pack(side = tkinter.LEFT)
 
 # layer.pack()
 fig = Figure(figsize=(5, 2), dpi=100)
-<<<<<<< HEAD
-=======
-# t = np.arange(0, 3, .01)
->>>>>>> 9d5290158369c9f5b6a83721325d50107799260b
 test1_tile = [3, 4, 5, 6, 7, 8, 9]
 test1_idfs = [0.0009953975677490234, 0.0009975433349609375, 0.016935110092163086, 0.05388212203979492, 2.1661813259124756, 12.364975452423096, 88.44031715393066]
 test1_bfs = [0.0004992485046386719, 0.0011005401611328125, 0.0019888877868652344, 0.007222890853881836, 0.2633225917816162, 3.516629457473755, 96.26532435417175]
@@ -91,24 +87,10 @@ test2_idfs = [0.009003639221191406, 0.048897743225097656, 0.6193442344665527, 0.
 ax_1 = fig.add_subplot(121)
 ax_1.plot(test1_tile, test1_bfs)
 ax_1.plot(test1_tile, test1_idfs)
-<<<<<<< HEAD
 
 ax_2 = fig.add_subplot(122)
 ax_2.plot(test2_x, test2_idfs)
 
-=======
-# ax_1.plot(t, 2 * np.sin(2 * np.pi * t))
-ax_2 = fig.add_subplot(122)
-ax_2.plot(test2_x, test2_idfs)
-# ax_2.plot(t, 2 * np.sin(2 * np.pi * t))
-# ax_3 = fig.add_subplot(123)
-# ax_3.plot(t, 2 * np.sin(2 * np.pi * t))
-# ax_4 = fig.add_subplot(124)
-# ax_4.plot(t, 2 * np.sin(2 * np.pi * t))
-# label1 = tkinter.Label(frame1, text = "hello")
-# label1.place(x = 0, y = 0)
-# label1.pack()
->>>>>>> 9d5290158369c9f5b6a83721325d50107799260b
 canvas = FigureCanvasTkAgg(fig, master=frame)
 # canvas = FigureCanvasTkAgg(fig, master=root)
 canvas.draw()
