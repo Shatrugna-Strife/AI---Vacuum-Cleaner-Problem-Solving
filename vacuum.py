@@ -1,7 +1,19 @@
 import random
 import sys
-side = 7
+# import embed_graph
+# side = embed_graph.tile_size
+# def input_values(stri):
+#     return int(input(stri))
+side = int(input("Enter tile size:"))
 tiles = side*side
+temp_dirt = int(float(tiles*int(input("Enter dirt percentage:")))*(1/100))
+if temp_dirt == 0:
+    temp_dirt = 1
+dirt = temp_dirt
+# dirt = int(float(tiles*int(input("Enter dirt percentage:")))*(1/100)) + 1
+# side = 4
+# dirt = 2
+
 
 # class vacuum_node:
 #     def __init__(self, state, position = 0, previous_list = [], visit_list= [0]*tiles, previous = None):
